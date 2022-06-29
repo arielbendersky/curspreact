@@ -8,11 +8,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {fawhatsapp} from "@fortawesome/free-solid-svg-icons"
 import {faWhatsapp} from "@fortawesome/free-brands-svg-icons"
 import ItemDetailContainer from "./components/Itemdetailcontainer";
-import  {BrowserRouter, Route, Routes} from "react-router-dom"
+import  {BrowserRouter, Route, Routes} from "react-router-dom";
+import { CartProvider } from "./components/CartContext";
 
 
 const App = () =>{
   return(
+    <CartProvider>
       <BrowserRouter>
         <Navbar/> 
         <Carrousel/>
@@ -24,6 +26,7 @@ const App = () =>{
         <i><FontAwesomeIcon icon={faWhatsapp} /></i></a>
         <Footer/>
         </BrowserRouter>
+        </CartProvider>
   
     );
 
